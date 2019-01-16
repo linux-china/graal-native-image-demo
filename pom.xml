@@ -59,6 +59,12 @@
             <artifactId>svm</artifactId>
             <version>1.0.0-rc11</version>
             <scope>provided</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.oracle.substratevm</groupId>
+                    <artifactId>svm-hosted-native-windows-amd64</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
@@ -96,12 +102,25 @@
                 <groupId>com.oracle.substratevm</groupId>
                 <artifactId>native-image-maven-plugin</artifactId>
                 <version>1.0.0-rc11</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.oracle.substratevm</groupId>
+                        <artifactId>svm</artifactId>
+                        <version>1.0.0-rc11</version>
+                        <exclusions>
+                            <exclusion>
+                                <groupId>com.oracle.substratevm</groupId>
+                                <artifactId>svm-hosted-native-windows-amd64</artifactId>
+                            </exclusion>
+                        </exclusions>
+                    </dependency>
+                </dependencies>
                 <configuration>
                     <mainClass>org.mvnsearch.App</mainClass>
                     <detail>true</detail>
                     <buildArgs>
                         <![CDATA[
-                        -H:Name=${artifactId} -H:ReflectionConfigurationFiles=../graal.json -H:+ReportUnsupportedElementsAtRuntime -Dio.netty.noUnsafe=true -Dio.netty.noJdkZlibDecoder=true --delay-class-initialization-to-runtime=io.netty.handler.ssl.JdkNpnApplicationProtocolNegotiator,io.netty.handler.ssl.ReferenceCountedOpenSslEngine,io.netty.util.internal.ObjectCleaner,io.netty.handler.ssl.ReferenceCountedOpenSslContext,io.netty.channel.DefaultChannelConfig -Dfile.encoding=UTF-8
+                        --allow-incomplete-classpath -H:Name=${artifactId} -H:ReflectionConfigurationFiles=../graal.json -H:+ReportUnsupportedElementsAtRuntime -Dio.netty.noUnsafe=true -Dio.netty.noJdkZlibDecoder=true --delay-class-initialization-to-runtime=io.netty.handler.ssl.JdkNpnApplicationProtocolNegotiator,io.netty.handler.ssl.ReferenceCountedOpenSslEngine,io.netty.util.internal.ObjectCleaner,io.netty.handler.ssl.ReferenceCountedOpenSslContext,io.netty.channel.DefaultChannelConfig -Dfile.encoding=UTF-8
                         ]]>
                     </buildArgs>
                 </configuration>

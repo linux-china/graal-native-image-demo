@@ -14,8 +14,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <rsocket.version>0.11.13</rsocket.version>
-        <netty5.version>4.1.32.Final</netty5.version>
+        <rsocket.version>0.11.15</rsocket.version>
+        <netty.version>4.1.32.Final</netty.version>
     </properties>
 
     <dependencies>
@@ -50,9 +50,14 @@
             <version>1.2.3</version>
         </dependency>
         <dependency>
+            <groupId>com.caucho</groupId>
+            <artifactId>hessian</artifactId>
+            <version>4.0.59</version>
+        </dependency>
+        <dependency>
             <groupId>com.oracle.substratevm</groupId>
             <artifactId>svm</artifactId>
-            <version>1.0.0-rc9</version>
+            <version>1.0.0-rc11</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -68,7 +73,7 @@
             <dependency>
                 <groupId>io.netty</groupId>
                 <artifactId>netty-bom</artifactId>
-                <version>${netty5.version}</version>
+                <version>${netty.version}</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
@@ -90,13 +95,13 @@
             <plugin>
                 <groupId>com.oracle.substratevm</groupId>
                 <artifactId>native-image-maven-plugin</artifactId>
-                <version>1.0.0-rc9</version>
+                <version>1.0.0-rc11</version>
                 <configuration>
                     <mainClass>org.mvnsearch.App</mainClass>
                     <detail>true</detail>
                     <buildArgs>
                         <![CDATA[
-                        -H:Name=${artifactId} -H:ReflectionConfigurationFiles=../graal.json -H:+ReportUnsupportedElementsAtRuntime -Dio.netty.noUnsafe=true -Dio.netty.noJdkZlibDecoder=true -Dfile.encoding=UTF-8
+                        -H:Name=${artifactId} -H:ReflectionConfigurationFiles=../graal.json -H:+ReportUnsupportedElementsAtRuntime -Dio.netty.noUnsafe=true -Dio.netty.noJdkZlibDecoder=true --delay-class-initialization-to-runtime=io.netty.handler.ssl.JdkNpnApplicationProtocolNegotiator,io.netty.handler.ssl.ReferenceCountedOpenSslEngine,io.netty.util.internal.ObjectCleaner,io.netty.handler.ssl.ReferenceCountedOpenSslContext,io.netty.channel.DefaultChannelConfig -Dfile.encoding=UTF-8
                         ]]>
                     </buildArgs>
                 </configuration>

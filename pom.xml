@@ -14,8 +14,9 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <rsocket.version>0.11.15</rsocket.version>
-        <netty.version>4.1.32.Final</netty.version>
+        <rsocket.version>0.11.17</rsocket.version>
+        <netty.version>4.1.33.Final</netty.version>
+        <graalvm.version>1.0.0-rc13</graalvm.version>
     </properties>
 
     <dependencies>
@@ -32,7 +33,6 @@
         <dependency>
             <groupId>io.projectreactor</groupId>
             <artifactId>reactor-core</artifactId>
-            <version>3.2.2.RELEASE</version>
         </dependency>
         <dependency>
             <groupId>com.google.guava</groupId>
@@ -50,21 +50,10 @@
             <version>1.2.3</version>
         </dependency>
         <dependency>
-            <groupId>com.caucho</groupId>
-            <artifactId>hessian</artifactId>
-            <version>4.0.59</version>
-        </dependency>
-        <dependency>
             <groupId>com.oracle.substratevm</groupId>
             <artifactId>svm</artifactId>
-            <version>1.0.0-rc11</version>
+            <version>${graalvm.version}</version>
             <scope>provided</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>com.oracle.substratevm</groupId>
-                    <artifactId>svm-hosted-native-windows-amd64</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
@@ -82,6 +71,13 @@
                 <version>${netty.version}</version>
                 <scope>import</scope>
                 <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>io.projectreactor</groupId>
+                <artifactId>reactor-bom</artifactId>
+                <version>Californium-SR5</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -101,18 +97,12 @@
             <plugin>
                 <groupId>com.oracle.substratevm</groupId>
                 <artifactId>native-image-maven-plugin</artifactId>
-                <version>1.0.0-rc11</version>
+                <version>${graalvm.version}</version>
                 <dependencies>
                     <dependency>
                         <groupId>com.oracle.substratevm</groupId>
                         <artifactId>svm</artifactId>
-                        <version>1.0.0-rc11</version>
-                        <exclusions>
-                            <exclusion>
-                                <groupId>com.oracle.substratevm</groupId>
-                                <artifactId>svm-hosted-native-windows-amd64</artifactId>
-                            </exclusion>
-                        </exclusions>
+                        <version>${graalvm.version}</version>
                     </dependency>
                 </dependencies>
                 <configuration>

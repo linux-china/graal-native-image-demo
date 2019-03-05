@@ -106,7 +106,7 @@
                     </dependency>
                 </dependencies>
                 <configuration>
-                    <mainClass>org.mvnsearch.App</mainClass>
+                    <mainClass>org.mvnsearch.RSocketAppServer</mainClass>
                     <detail>true</detail>
                     <buildArgs>
                         <![CDATA[

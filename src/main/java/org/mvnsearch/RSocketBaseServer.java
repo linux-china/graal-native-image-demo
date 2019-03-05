@@ -17,7 +17,7 @@ import java.util.Date;
  * @author linux_china
  */
 public abstract class RSocketBaseServer {
-    private Logger log = LoggerFactory.getLogger(App.class);
+    private Logger log = LoggerFactory.getLogger(RSocketAppServer.class);
 
     public void start() {
         log.info("Begin to start the rsocket server");

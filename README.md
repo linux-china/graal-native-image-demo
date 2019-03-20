@@ -17,6 +17,7 @@ mvn -DskipTests clean package native-image:native-image
 
 # References
 
+* Ahead-of-time Compilation: https://www.graalvm.org/docs/reference-manual/aot-compilation/
 * native-image-maven-plugin: https://github.com/oracle/graal/blob/master/substratevm/src/native-image-maven-plugin/src/main/java/com/oracle/substratevm/NativeImageMojo.java
 * native image reflection configuration: https://github.com/oracle/graal/blob/master/substratevm/REFLECTION.md
 * GraalVM release notes: https://www.graalvm.org/docs/release-notes/

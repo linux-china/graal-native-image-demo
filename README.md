@@ -5,8 +5,9 @@ Graal native image demo with RSocket, Netty.
 
 # Graal reflection configuration
 
-please use native-image.properties, the directory is resource/META-INFO/native-image/xxx.your_groupId/your_artifactId/native-image.properties
+please use native-image.properties and reflection-config.json, the directory is resource/META-INFO/native-image/xxx.your_groupId/your_artifactId/native-image.properties
 
+* Netty: src/main/resources/META-INF/native-image/io.netty/codec-http/native-image.properties
 
 # Build
 

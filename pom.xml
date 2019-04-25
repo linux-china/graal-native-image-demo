@@ -16,7 +16,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <rsocket.version>0.12.1</rsocket.version>
         <netty.version>4.1.34.Final</netty.version>
-        <graalvm.version>1.0.0-rc15</graalvm.version>
+        <graalvm.version>1.0.0-rc16</graalvm.version>
     </properties>
 
     <dependencies>
@@ -79,14 +79,14 @@
             <dependency>
                 <groupId>io.projectreactor</groupId>
                 <artifactId>reactor-bom</artifactId>
-                <version>Californium-SR5</version>
+                <version>Californium-SR6</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.junit</groupId>
                 <artifactId>junit-bom</artifactId>
-                <version>5.4.1</version>
+                <version>5.4.2</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>

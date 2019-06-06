@@ -25,3 +25,4 @@ mvn -DskipTests clean package native-image:native-image
 * RSocket Java: https://github.com/rsocket/rsocket-java
 * Spring Boot with Graal: https://github.com/dsyer/spring-boot-micro-apps
 * Simplifying native-image generation with Maven plugin and embeddable configuration: https://medium.com/graalvm/simplifying-native-image-generation-with-maven-plugin-and-embeddable-configuration-d5b283b92f57
+* Introducing the Tracing Agent: Simplifying GraalVM Native Image Configuration: https://medium.com/graalvm/introducing-the-tracing-agent-simplifying-graalvm-native-image-configuration-c3b56c486271

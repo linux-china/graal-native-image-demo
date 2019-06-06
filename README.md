@@ -27,4 +27,5 @@ mvn -DskipTests clean package native-image:native-image
 * Simplifying native-image generation with Maven plugin and embeddable configuration: https://medium.com/graalvm/simplifying-native-image-generation-with-maven-plugin-and-embeddable-configuration-d5b283b92f57
 * Introducing the Tracing Agent: Simplifying GraalVM Native Image Configuration: https://medium.com/graalvm/introducing-the-tracing-agent-simplifying-graalvm-native-image-configuration-c3b56c486271
 * Dynamic proxies on Substrate VM: https://github.com/oracle/graal/blob/master/substratevm/DYNAMIC_PROXY.md
+* Resource Bundles on Substrate VM: https://github.com/oracle/graal/blob/master/substratevm/RESOURCES.md
 

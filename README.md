@@ -16,12 +16,6 @@ please use native-image.properties and reflection-config.json, the directory is 
 mvn -DskipTests clean package native-image:native-image
 ```
 
-# Error
-
-```
-       -H:ResourceConfigurationFiles=${.}/resource-config.json \
-
-```
 # References
 
 * Ahead-of-time Compilation: https://www.graalvm.org/docs/reference-manual/aot-compilation/

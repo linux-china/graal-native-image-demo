@@ -16,6 +16,12 @@ please use native-image.properties and reflection-config.json, the directory is 
 mvn -DskipTests clean package native-image:native-image
 ```
 
+# Error
+
+```
+       -H:ResourceConfigurationFiles=${.}/resource-config.json \
+
+```
 # References
 
 * Ahead-of-time Compilation: https://www.graalvm.org/docs/reference-manual/aot-compilation/
@@ -26,3 +32,5 @@ mvn -DskipTests clean package native-image:native-image
 * Spring Boot with Graal: https://github.com/dsyer/spring-boot-micro-apps
 * Simplifying native-image generation with Maven plugin and embeddable configuration: https://medium.com/graalvm/simplifying-native-image-generation-with-maven-plugin-and-embeddable-configuration-d5b283b92f57
 * Introducing the Tracing Agent: Simplifying GraalVM Native Image Configuration: https://medium.com/graalvm/introducing-the-tracing-agent-simplifying-graalvm-native-image-configuration-c3b56c486271
+* Dynamic proxies on Substrate VM: https://github.com/oracle/graal/blob/master/substratevm/DYNAMIC_PROXY.md
+

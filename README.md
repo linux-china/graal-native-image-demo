@@ -16,6 +16,11 @@ please use native-image.properties and reflection-config.json, the directory is 
 mvn -DskipTests clean package native-image:native-image
 ```
 
+# Reflection Tracing Agent
+
+```
+java -agentlib:native-image-agent=config-output-dir=target/native-image
+```
 # References
 
 * Ahead-of-time Compilation: https://www.graalvm.org/docs/reference-manual/aot-compilation/

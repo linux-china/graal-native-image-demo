@@ -14,9 +14,9 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <rsocket.version>0.12.2-RC3</rsocket.version>
+        <rsocket.version>0.12.2-RC4</rsocket.version>
         <netty.version>4.1.34.Final</netty.version>
-        <graalvm.version>19.0.0</graalvm.version>
+        <graalvm.version>19.0.2</graalvm.version>
     </properties>
 
     <dependencies>
@@ -37,7 +37,7 @@
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-            <version>27.1-jre</version>
+            <version>28.0-jre</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -48,6 +48,11 @@
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
             <version>1.2.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.graalvm.sdk</groupId>
+            <artifactId>graal-sdk</artifactId>
+            <version>${graalvm.version}</version>
         </dependency>
         <dependency>
             <groupId>com.oracle.substratevm</groupId>
@@ -86,7 +91,7 @@
             <dependency>
                 <groupId>org.junit</groupId>
                 <artifactId>junit-bom</artifactId>
-                <version>5.4.2</version>
+                <version>5.5.0-RC2</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>

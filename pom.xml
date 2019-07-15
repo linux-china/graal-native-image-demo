@@ -16,7 +16,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <rsocket.version>0.12.2-RC4</rsocket.version>
         <netty.version>4.1.37.Final</netty.version>
-        <graalvm.version>19.0.2</graalvm.version>
+        <graalvm.version>19.1.0</graalvm.version>
     </properties>
 
     <dependencies>

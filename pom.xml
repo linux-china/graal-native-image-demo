@@ -14,9 +14,9 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <rsocket.version>0.12.2-RC4</rsocket.version>
-        <netty.version>4.1.37.Final</netty.version>
-        <graalvm.version>19.1.0</graalvm.version>
+        <rsocket.version>1.0.0-RC1</rsocket.version>
+        <netty.version>4.1.38.Final</netty.version>
+        <graalvm.version>19.1.1</graalvm.version>
     </properties>
 
     <dependencies>

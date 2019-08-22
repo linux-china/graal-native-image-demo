@@ -1,4 +1,4 @@
-export GRAAL_HOME := "~/.jenv/candidates/java/graalvm-19.1.1"
+export GRAAL_HOME := "~/.jenv/candidates/java/graalvm-19.2.0"
 
 # maven build
 build:

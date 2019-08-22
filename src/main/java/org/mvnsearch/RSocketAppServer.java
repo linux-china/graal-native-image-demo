@@ -1,9 +1,5 @@
 package org.mvnsearch;
 
-import org.mvnsearch.proxy.DemoService;
-import org.mvnsearch.proxy.MyProxyHandler;
-
-import java.lang.reflect.Proxy;
 import java.util.concurrent.CountDownLatch;
 
 /**
@@ -28,8 +24,4 @@ public class RSocketAppServer extends RSocketBaseServer {
         return "server1";
     }
 
-    public static void proxyTest() {
-        DemoService demoService = (DemoService) Proxy.newProxyInstance(RSocketAppServer.class.getClassLoader(), new Class<?>[]{DemoService.class}, new MyProxyHandler());
-        demoService.hello("RSocket");
-    }
 }

@@ -14,9 +14,9 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <rsocket.version>1.0.0-RC1</rsocket.version>
-        <netty.version>4.1.38.Final</netty.version>
-        <graalvm.version>19.1.1</graalvm.version>
+        <rsocket.version>1.0.0-RC2</rsocket.version>
+        <netty.version>4.1.39.Final</netty.version>
+        <graalvm.version>19.2.0</graalvm.version>
     </properties>
 
     <dependencies>
@@ -42,7 +42,7 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>1.7.25</version>
+            <version>1.7.28</version>
         </dependency>
         <dependency>
             <groupId>ch.qos.logback</groupId>
@@ -91,7 +91,7 @@
             <dependency>
                 <groupId>org.junit</groupId>
                 <artifactId>junit-bom</artifactId>
-                <version>5.5.0-RC2</version>
+                <version>5.5.1</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
@@ -153,4 +153,15 @@
             </plugin>
         </plugins>
     </build>
+
+    <repositories>
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/libs-milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 </project>

@@ -7,5 +7,5 @@ package org.mvnsearch.proxy;
  */
 public interface HelloService {
 
-    void hello(String name);
+    String hello(String name);
 }

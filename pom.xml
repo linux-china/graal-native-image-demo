@@ -15,8 +15,10 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <rsocket.version>1.0.0-RC3</rsocket.version>
-        <netty.version>4.1.41.Final</netty.version>
+        <reactor-bom.version>Dysprosium-RELEASE</reactor-bom.version>
+        <netty.version>4.1.42.Final</netty.version>
         <graalvm.version>19.2.0.1</graalvm.version>
+        <junit5.version>5.5.2</junit5.version>
     </properties>
 
     <dependencies>
@@ -84,14 +86,14 @@
             <dependency>
                 <groupId>io.projectreactor</groupId>
                 <artifactId>reactor-bom</artifactId>
-                <version>Dysprosium-RC1</version>
+                <version>${reactor-bom.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.junit</groupId>
                 <artifactId>junit-bom</artifactId>
-                <version>5.5.1</version>
+                <version>${junit5.version}</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>

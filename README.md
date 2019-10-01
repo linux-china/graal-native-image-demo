@@ -21,8 +21,10 @@ mvn -DskipTests clean package native-image:native-image
 ```
 java -agentlib:native-image-agent=config-output-dir=target/native-image
 ```
+
 # References
 
+* Generate Native Images with GraalVM Enterprise: https://docs.oracle.com/en/graalvm/enterprise/19/guide/reference/native-image.html
 * Ahead-of-time Compilation: https://www.graalvm.org/docs/reference-manual/aot-compilation/
 * native-image-maven-plugin: https://github.com/oracle/graal/blob/master/substratevm/src/native-image-maven-plugin/src/main/java/com/oracle/substratevm/NativeImageMojo.java
 * native image reflection configuration: https://github.com/oracle/graal/blob/master/substratevm/REFLECTION.md

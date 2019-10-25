@@ -153,6 +153,30 @@
                     <imageName>${artifactId}</imageName>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>1.7.0</version>
+                <configuration>
+                    <from>
+                        <image>openjdk:11.0.5-jdk</image>
+                        <!-- <image>fabric8/java-centos-openjdk11-jdk</image>-->
+                    </from>
+                    <to>
+                        <image>linuxchina/rsocket-demo</image>
+                    </to>
+                    <container>
+                        <useCurrentTimestamp>true</useCurrentTimestamp>
+                        <mainClass>org.mvnsearch.RSocketAppServer</mainClass>
+                        <entrypoint>/bin/sh,/app/run-java.sh</entrypoint>
+                        <environment>
+                            <JAVA_APP_DIR>/app</JAVA_APP_DIR>
+                            <JAVA_CLASSPATH>/app/resources:/app/classes:/app/libs/*</JAVA_CLASSPATH>
+                            <JAVA_MAIN_CLASS>org.mvnsearch.RSocketAppServer</JAVA_MAIN_CLASS>
+                        </environment>
+                    </container>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 

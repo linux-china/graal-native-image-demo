@@ -15,9 +15,9 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <rsocket.version>1.0.0-RC5</rsocket.version>
-        <reactor-bom.version>Dysprosium-SR1</reactor-bom.version>
+        <reactor-bom.version>Dysprosium-SR2</reactor-bom.version>
         <netty.version>4.1.43.Final</netty.version>
-        <graalvm.version>19.2.1</graalvm.version>
+        <graalvm.version>19.3.0</graalvm.version>
         <junit5.version>5.5.2</junit5.version>
     </properties>
 
@@ -39,12 +39,12 @@
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-            <version>28.0-jre</version>
+            <version>28.1-jre</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>1.7.28</version>
+            <version>1.7.29</version>
         </dependency>
         <dependency>
             <groupId>ch.qos.logback</groupId>
@@ -57,7 +57,7 @@
             <version>${graalvm.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.oracle.substratevm</groupId>
+            <groupId>org.graalvm.nativeimage</groupId>
             <artifactId>svm</artifactId>
             <version>${graalvm.version}</version>
             <scope>provided</scope>
@@ -137,12 +137,12 @@
                 </executions>
             </plugin>
             <plugin>
-                <groupId>com.oracle.substratevm</groupId>
+                <groupId>org.graalvm.nativeimage</groupId>
                 <artifactId>native-image-maven-plugin</artifactId>
                 <version>${graalvm.version}</version>
                 <dependencies>
                     <dependency>
-                        <groupId>com.oracle.substratevm</groupId>
+                        <groupId>org.graalvm.nativeimage</groupId>
                         <artifactId>svm</artifactId>
                         <version>${graalvm.version}</version>
                     </dependency>
@@ -156,7 +156,7 @@
             <plugin>
                 <groupId>com.google.cloud.tools</groupId>
                 <artifactId>jib-maven-plugin</artifactId>
-                <version>1.7.0</version>
+                <version>1.8.0</version>
                 <configuration>
                     <from>
                         <image>openjdk:11.0.5-jdk</image>
@@ -179,15 +179,5 @@
             </plugin>
         </plugins>
     </build>
-
-    <repositories>
-        <repository>
-            <id>spring-milestones</id>
-            <name>Spring Milestones</name>
-            <url>https://repo.spring.io/libs-milestone</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
+    
 </project>

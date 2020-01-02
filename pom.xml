@@ -16,8 +16,8 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <rsocket.version>1.0.0-RC5</rsocket.version>
         <reactor-bom.version>Dysprosium-SR2</reactor-bom.version>
-        <netty.version>4.1.43.Final</netty.version>
-        <graalvm.version>19.3.0</graalvm.version>
+        <netty.version>4.1.44.Final</netty.version>
+        <graalvm.version>19.3.0.2</graalvm.version>
         <junit5.version>5.5.2</junit5.version>
     </properties>
 
@@ -45,16 +45,6 @@
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
             <version>1.7.29</version>
-        </dependency>
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <version>1.2.3</version>
-        </dependency>
-        <dependency>
-            <groupId>org.graalvm.sdk</groupId>
-            <artifactId>graal-sdk</artifactId>
-            <version>${graalvm.version}</version>
         </dependency>
         <dependency>
             <groupId>org.graalvm.nativeimage</groupId>
@@ -179,5 +169,5 @@
             </plugin>
         </plugins>
     </build>
-    
+
 </project>

@@ -35,4 +35,6 @@ java -agentlib:native-image-agent=config-output-dir=target/native-image
 * Introducing the Tracing Agent: Simplifying GraalVM Native Image Configuration: https://medium.com/graalvm/introducing-the-tracing-agent-simplifying-graalvm-native-image-configuration-c3b56c486271
 * Dynamic proxies on Substrate VM: https://github.com/oracle/graal/blob/master/substratevm/DYNAMIC_PROXY.md
 * Resource Bundles on Substrate VM: https://github.com/oracle/graal/blob/master/substratevm/RESOURCES.md
+* (Finally) solving a substitution GraalVM issue: https://blog.frankel.ch/solving-substitution-graalvm-issue/
+
 

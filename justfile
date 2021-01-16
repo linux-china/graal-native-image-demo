@@ -1,4 +1,4 @@
-export GRAAL_HOME := "~/.jenv/candidates/java/graalvm-19.2.1"
+export GRAAL_HOME := "~/.jenv/candidates/java/graalvm-20.3.0-java11"
 
 # maven build
 build:
@@ -6,11 +6,9 @@ build:
 
 # native build
 native_build:
-   mvn -DskipTests package native-image:native-image
+   mvn -DskipTests clean package native-image:native-image
 
-# docker build
-docker_build:
-   mvn compile jib:dockerBuild
-
-run_with_agent:
-   {{GRAAL_HOME}}/bin/java -agentlib:native-image-agent=config-output-dir=target/classes/META-INF/native-image -jar target/native-image-demo-1.0.0-SNAPSHOT-jar-with-dependencies.jar
+# run with agent
+run-with-agent: build
+   mkdir -p target/native-image
+   {{GRAAL_HOME}}/bin/java -agentlib:native-image-agent=config-output-dir=target/native-image -jar target/native-image-demo-1.0.0-SNAPSHOT-jar-with-dependencies.jar

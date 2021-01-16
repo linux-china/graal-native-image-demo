@@ -1,26 +1,12 @@
 GraalVM native image
 ====================
 
-Graal native image demo with RSocket, Netty.
+Graal native image demo.
 
-# Graal reflection configuration
+# Resources
 
-please use native-image.properties and reflection-config.json, the directory is resource/META-INFO/native-image/xxx.your_groupId/your_artifactId/native-image.properties
+* UPX: the Ultimate Packer for eXecutables https://github.com/upx/upx
 
-* Netty: src/main/resources/META-INF/native-image/io.netty/codec-http/native-image.properties
-
-# Build
-
-<!--[demo]:second-->
-```bash
-mvn -DskipTests clean package native-image:native-image
-```
-
-# Reflection Tracing Agent
-
-```
-java -agentlib:native-image-agent=config-output-dir=target/native-image
-```
 
 # References
 
@@ -36,5 +22,6 @@ java -agentlib:native-image-agent=config-output-dir=target/native-image
 * Dynamic proxies on Substrate VM: https://github.com/oracle/graal/blob/master/substratevm/DYNAMIC_PROXY.md
 * Resource Bundles on Substrate VM: https://github.com/oracle/graal/blob/master/substratevm/RESOURCES.md
 * (Finally) solving a substitution GraalVM issue: https://blog.frankel.ch/solving-substitution-graalvm-issue/
+* ABOUT THE TOOLING AVAILABLE TO CREATE NATIVE GRAALVM IMAGES: https://info.michael-simons.eu/2020/09/15/about-the-tooling-available-to-create-native-graalvm-images/
 
 

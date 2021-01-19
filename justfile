@@ -4,6 +4,10 @@ export GRAAL_HOME := "~/.jenv/candidates/java/graalvm-20.3.0-java11"
 build:
    mvn -DskipTests clean package
 
+# truffle run with espresso
+truffle-run:
+  java -truffle -jar target/native-image-demo-1.0.0-SNAPSHOT-jar-with-dependencies.jar
+
 # native build
 native_build:
    mvn -DskipTests clean package native-image:native-image

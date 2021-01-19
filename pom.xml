@@ -14,10 +14,9 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <reactor-bom.version>2020.0.2</reactor-bom.version>
-        <netty.version>4.1.58.Final</netty.version>
         <graalvm.version>20.3.0</graalvm.version>
         <junit5.version>5.7.0</junit5.version>
+        <mainClass>org.mvnsearch.NativeImageApp</mainClass>
     </properties>
 
     <dependencies>
@@ -57,13 +56,6 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>io.netty</groupId>
-                <artifactId>netty-bom</artifactId>
-                <version>${netty.version}</version>
-                <scope>import</scope>
-                <type>pom</type>
-            </dependency>
-            <dependency>
                 <groupId>org.junit</groupId>
                 <artifactId>junit-bom</artifactId>
                 <version>${junit5.version}</version>
@@ -95,7 +87,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>org.mvnsearch.NativeImageApp</mainClass>
+                            <mainClass>${mainClass}</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -121,33 +113,9 @@
                     </dependency>
                 </dependencies>
                 <configuration>
-                    <mainClass>org.mvnsearch.NativeImageApp</mainClass>
+                    <mainClass>${mainClass}</mainClass>
                     <detail>true</detail>
                     <imageName>${artifactId}</imageName>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>com.google.cloud.tools</groupId>
-                <artifactId>jib-maven-plugin</artifactId>
-                <version>1.8.0</version>
-                <configuration>
-                    <from>
-                        <image>openjdk:11.0.5-jdk</image>
-                        <!-- <image>fabric8/java-centos-openjdk11-jdk</image>-->
-                    </from>
-                    <to>
-                        <image>linuxchina/rsocket-demo</image>
-                    </to>
-                    <container>
-                        <useCurrentTimestamp>true</useCurrentTimestamp>
-                        <mainClass>org.mvnsearch.NativeImageApp</mainClass>
-                        <entrypoint>/bin/sh,/app/run-java.sh</entrypoint>
-                        <environment>
-                            <JAVA_APP_DIR>/app</JAVA_APP_DIR>
-                            <JAVA_CLASSPATH>/app/resources:/app/classes:/app/libs/*</JAVA_CLASSPATH>
-                            <JAVA_MAIN_CLASS>org.mvnsearch.NativeImageApp</JAVA_MAIN_CLASS>
-                        </environment>
-                    </container>
                 </configuration>
             </plugin>
         </plugins>

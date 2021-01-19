@@ -11,6 +11,7 @@ Graal native image demo.
 # References
 
 * GraalVM blog: https://medium.com/graalvm
+* Native Image Build Configuration: https://www.graalvm.org/reference-manual/native-image/BuildConfiguration/
 * Generate Native Images with GraalVM Enterprise: https://docs.oracle.com/en/graalvm/enterprise/19/guide/reference/native-image.html
 * Ahead-of-time Compilation: https://www.graalvm.org/docs/reference-manual/aot-compilation/
 * native-image-maven-plugin: https://github.com/oracle/graal/blob/master/substratevm/src/native-image-maven-plugin/src/main/java/com/oracle/substratevm/NativeImageMojo.java

@@ -3,6 +3,14 @@ GraalVM native image
 
 Graal native image demo.
 
+# Configurations of GraalVM native image
+
+* Reflective access
+* Serialized classes
+* Proxied interfaces
+* Resources and resource bundles
+* JNI
+
 # Resources
 
 * UPX: the Ultimate Packer for eXecutables https://github.com/upx/upx

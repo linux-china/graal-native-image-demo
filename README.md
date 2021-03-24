@@ -15,6 +15,9 @@ Graal native image demo.
 
 * UPX: the Ultimate Packer for eXecutables https://github.com/upx/upx
 
+# Env variables
+
+* "_": command name to start
 
 # References
 

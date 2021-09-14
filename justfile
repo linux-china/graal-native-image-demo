@@ -1,4 +1,4 @@
-export GRAAL_HOME := "~/.jenv/candidates/java/graalvm-21-java11"
+export GRAAL_HOME := "$HOME/.jenv/candidates/java/graalvm-21.3-java17"
 
 # maven build
 build:
@@ -9,8 +9,8 @@ truffle-run:
   java -truffle -jar target/native-image-demo-1.0.0-SNAPSHOT-jar-with-dependencies.jar
 
 # native build
-native_build:
-   mvn -DskipTests clean package native-image:native-image
+native-build:
+   mvn -DskipTests clean package native:build
 
 # run with agent
 run-with-agent: build

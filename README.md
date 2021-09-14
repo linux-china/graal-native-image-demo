@@ -36,5 +36,6 @@ Graal native image demo.
 * Resource Bundles on Substrate VM: https://github.com/oracle/graal/blob/master/substratevm/RESOURCES.md
 * (Finally) solving a substitution GraalVM issue: https://blog.frankel.ch/solving-substitution-graalvm-issue/
 * ABOUT THE TOOLING AVAILABLE TO CREATE NATIVE GRAALVM IMAGES: https://info.michael-simons.eu/2020/09/15/about-the-tooling-available-to-create-native-graalvm-images/
+* Maven plugin for GraalVM Native Image building:  https://graalvm.github.io/native-build-tools/0.9.5/maven-plugin.html
 
 

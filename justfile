@@ -1,4 +1,4 @@
-export GRAAL_HOME := "$HOME/.jenv/candidates/java/graalvm-21.3-java17"
+export GRAAL_HOME := "$HOME/.jenv/candidates/java/graalvm-23.0-java20"
 
 # maven build
 build:
@@ -10,7 +10,7 @@ truffle-run:
 
 # native build
 native-build:
-   mvn -DskipTests clean package native:build
+   mvn -DskipTests clean package native:compile-no-fork
 
 # run with agent
 run-with-agent: build
